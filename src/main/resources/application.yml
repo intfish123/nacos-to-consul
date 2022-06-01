@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+logging:
+  config: classpath:log4j.xml
+
+spring:
+  application:
+    name: nacos-to-consul
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://172.16.16.101:30000
+        enabled: true
+#        namespace: nsid-bigdata
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+nacos-consul-adapter:
+  mode: direct
