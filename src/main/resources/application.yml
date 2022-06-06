@@ -12,7 +12,8 @@ spring:
       discovery:
         server-addr: http://172.16.16.101:30000
         enabled: true
-#        namespace: nsid-bigdata
+        register-enabled: false
+    #        namespace: nsid-bigdata
     gateway:
       discovery:
         locator:
