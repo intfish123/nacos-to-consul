@@ -1,0 +1,16 @@
+image: maven:3.8.6-eclipse-temurin-8-alpine
+
+build_job:
+  stage: build
+  only:
+    - branches
+    - tags
+  script:
+    - mvn clean package -Dmaven.test.skip=true
+    - MTAG=${CI_COMMIT_TAG}; if [[ ! $MTAG ]]; then MTAG=${CI_COMMIT_BRANCH}; fi
+    - docker build -f ./Dockerfile -t metaapp-registry-vpc.cn-beijing.cr.aliyuncs.com/metaops/bigdata-nacos-to-consul:${MTAG} .
+    - docker tag metaapp-registry-vpc.cn-beijing.cr.aliyuncs.com/metaops/bigdata-nacos-to-consul:${MTAG} uswccr.ccs.tencentyun.com/bigdata/bigdata-nacos-to-consul:${MTAG}
+    - docker push metaapp-registry-vpc.cn-beijing.cr.aliyuncs.com/metaops/bigdata-nacos-to-consul:${MTAG}
+    - docker push uswccr.ccs.tencentyun.com/bigdata/bigdata-nacos-to-consul:${MTAG}
+    - echo "metaapp-registry-vpc.cn-beijing.cr.aliyuncs.com/metaops/bigdata-nacos-to-consul:${MTAG}"
+    - echo "uswccr.ccs.tencentyun.com/bigdata/bigdata-nacos-to-consul:${MTAG}"
