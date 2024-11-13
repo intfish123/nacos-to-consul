@@ -125,11 +125,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.github.chen-gliu/nacos-consul-adapter -->
+        <!-- https://mvnrepository.com/artifact/io.github.intfish123/nacos-consul-adapter -->
         <dependency>
             <groupId>io.github.intfish123</groupId>
             <artifactId>nacos-consul-adapter</artifactId>
-            <version>0.0.5.M2</version>
+            <version>0.0.5.M3</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
