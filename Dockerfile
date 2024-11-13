@@ -4,6 +4,7 @@ WORKDIR /
 
 RUN yum update -y && yum install -y wget curl telnet ca-certificates git bash sudo tzdata curl fontconfig dejavu-fonts-common dejavu-sans-fonts
 RUN mkdir logs
+RUN mkdir config
 
 COPY target/nacos-to-consul-0.0.1.jar nacos-to-consul.jar
 
