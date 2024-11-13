@@ -129,7 +129,7 @@
         <dependency>
             <groupId>io.github.chen-gliu</groupId>
             <artifactId>nacos-consul-adapter</artifactId>
-            <version>0.0.4.M</version>
+            <version>0.0.5.M</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
