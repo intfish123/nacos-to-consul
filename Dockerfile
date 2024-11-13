@@ -1,6 +1,6 @@
 FROM alibabadragonwell/dragonwell:17-anolis
 
-WORKDIR /workspace
+WORKDIR /
 
 RUN yum update -y && yum install -y wget curl telnet ca-certificates git bash sudo tzdata curl fontconfig dejavu-fonts-common dejavu-sans-fonts
 RUN mkdir logs
